@@ -1,0 +1,26 @@
+.header {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-weight: 700;
+  color: #4793ff;
+  font-size: 2rem;
+}
+.list__city {
+  max-width: 200px;
+  font-size: 1rem;
+  border-color: #4793ff;
+  height: 25px;
+  text-align: center;
+  cursor: pointer;
+}
