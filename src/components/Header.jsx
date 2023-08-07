@@ -4,12 +4,12 @@ import styles from "./Header.module.css";
 import Image from "../../public/Image";
 
 function Header() {
-  const [input, setInput] = useState("");
+  const [city, setCity] = useState("");
 
   function inputCity(event) {
     event.preventDefault();
     const userData = {
-      input: input,
+      city: city,
     };
     console.log(userData);
   }
@@ -29,8 +29,8 @@ function Header() {
             <input
               className={styles.list__city}
               type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
               placeholder="Выбрать город"
             />
           </label>
