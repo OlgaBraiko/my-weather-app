@@ -1,6 +1,6 @@
 import Header from "./components/Header";
+import TodayTemp from "./components/TodayTemp";
 import ThisDay from "./components/ThisDay";
-import fetchWeatherData from "./components/fetchWeatherData";
 
 import "./App.css";
 
@@ -10,7 +10,7 @@ function App() {
       <div className="container">
         <Header />
         <ThisDay />
-        <fetchWeatherData />
+        <TodayTemp />
       </div>
     </>
   );
