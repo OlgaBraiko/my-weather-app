@@ -10,6 +10,7 @@ function TodayTemp() {
       if (res.ok) {
         return await res.json();
       }
+
       throw new Error("Network response was not ok");
     } catch (error) {
       console.log(`Что-то пошло не так: ${error}`);

@@ -9,7 +9,14 @@ function App() {
     <>
       <div className="container">
         <Header />
-        <ThisDay />
+        <ThisDay
+          temp={this.state.temp}
+          city={this.state.city}
+          country={this.state.country}
+          sunrise={this.state.sunrise}
+          sunset={this.state.sunset}
+          error={this.state.error}
+        />
         <TodayTemp />
       </div>
     </>
