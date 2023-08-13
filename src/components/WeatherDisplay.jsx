@@ -1,10 +1,31 @@
+import { useState } from "react";
+
 import styles from "./ThisDay.module.css";
 import Image from "../../public/Image";
 
-function ThisDay() {
+import WeatherInput from "./WeatherInput";
+
+import TodayTempFetch from "./TodayTempFetch";
+
+function WeatherDisplay() {
+  const { state, setState } = useState(null);
+
+  function changeData(data) {
+    setState({
+      temp_max: data.main.temp,
+      city: data.name,
+      country: data.sys.country,
+      sunrise: data.sys.sunrise,
+      sunset: data.sys.sunset,
+      error: "",
+    });
+  }
+
   return (
     <>
       <header className={styles.today}>
+        <WeatherInput onChange={changeData} />
+        {state && <TodayTempFetch state={state} />}
         <div className={styles.top__block}>
           <div className={styles.top__block_wrapper}>
             <div className={styles.this__temp}>20</div>
@@ -27,4 +48,4 @@ function ThisDay() {
     </>
   );
 }
-export default ThisDay;
+export default WeatherDisplay;

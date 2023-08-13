@@ -1,21 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import styles from "./Header.module.css";
 import Image from "../../public/Image";
 
-function Header() {
-  const [city, setCity] = useState("");
+import TodayTempFetch from "./TodayTempFetch";
 
-  function inputCity(event) {
-    event.preventDefault();
-    const userData = {
-      city: city,
-    };
-    console.log(userData);
+function WeatherInput() {
+  const [city, setCity] = useState;
+
+  function updateCity() {
+    setCity({ city: data.name });
   }
 
   return (
     <header className={styles.header}>
+      <TodayTempFetch data={data} />
       <div className={styles.wrapper}>
         <div className={styles.logo}>
           <Image id="header-logo" />
@@ -24,13 +23,12 @@ function Header() {
       </div>
       <div className={styles.wrapper}>
         <Image id="change-theme" />
-        <form onSubmit={inputCity}>
+        <form onChange={updateCity}>
           <label>
             <input
+              city={city}
               className={styles.list__city}
               type="text"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
               placeholder="Выбрать город"
             />
           </label>
@@ -41,4 +39,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default WeatherInput;
