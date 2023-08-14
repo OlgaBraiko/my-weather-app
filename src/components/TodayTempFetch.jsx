@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import WeatherInput from "./WeatherInput";
 
-function TodayTempFetch({ updateWeather }) {
+function TodayTempFetch() {
   const [weatherData, setWeatherData] = useState(null);
 
   const fetchWeatherData = async (url) => {
@@ -41,7 +41,6 @@ function TodayTempFetch({ updateWeather }) {
   }, []);
   return (
     <>
-      <div>{updateWeather}</div>
       <pre>{JSON.stringify(weatherData)}</pre>;
     </>
   );

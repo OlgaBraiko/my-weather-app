@@ -5,26 +5,15 @@ import Image from "../../public/Image";
 
 import WeatherInput from "./WeatherInput";
 
-import TodayTempFetch from "./TodayTempFetch";
+function WeatherDisplay(props) {
+  const [state] = props;
 
-function WeatherDisplay() {
-  const { state, setState } = useState(null);
-
-  function changeData(data) {
-    setState({
-      temp_max: data.main.temp,
-      city: data.name,
-      country: data.sys.country,
-      sunrise: data.sys.sunrise,
-      sunset: data.sys.sunset,
-      error: "",
-    });
-  }
+  //сюда state
+  //готовая погода
 
   return (
     <>
       <header className={styles.today}>
-        <WeatherInput onChange={changeData} />
         {state && <TodayTempFetch state={state} />}
         <div className={styles.top__block}>
           <div className={styles.top__block_wrapper}>
