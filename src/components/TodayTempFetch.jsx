@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import WeatherInput from "./WeatherInput";
 
 function TodayTempFetch() {
   const [weatherData, setWeatherData] = useState(null);

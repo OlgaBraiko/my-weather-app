@@ -1,22 +1,14 @@
-import { useState } from "react";
-
 import styles from "./ThisDay.module.css";
 import Image from "../../public/Image";
-
 import WeatherInput from "./WeatherInput";
 
-function WeatherDisplay(props) {
-  const [state] = props;
-
-  //сюда state
-  //готовая погода
-
+function WeatherDisplay({ state }) {
   return (
     <>
       <header className={styles.today}>
-        {state && <TodayTempFetch state={state} />}
         <div className={styles.top__block}>
           <div className={styles.top__block_wrapper}>
+            {state && <WeatherInput state={state} />}
             <div className={styles.this__temp}>20</div>
             <div className={styles.this__day}>Сегодня</div>
           </div>

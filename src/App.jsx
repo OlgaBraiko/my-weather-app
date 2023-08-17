@@ -22,8 +22,8 @@ function App() {
   return (
     <>
       <div className="container">
-        <WeatherInput onChange={updateWeather} />
-        <WeatherDisplay />
+        <WeatherInput updateWeather={updateWeather} />
+        <WeatherDisplay state={state} />
         <TodayTempFetch />
       </div>
     </>
