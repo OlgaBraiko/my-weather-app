@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 import WeatherInput from "./components/WeatherInput";
@@ -9,14 +9,7 @@ function App() {
   const [state, setState] = useState(null);
 
   function updateWeather() {
-    setState({
-      temp_max: data.main.temp,
-      city: data.name,
-      country: data.sys.country,
-      sunrise: data.sys.sunrise,
-      sunset: data.sys.sunset,
-      error: "",
-    });
+    setState();
   }
 
   return (

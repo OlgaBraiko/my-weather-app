@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 
 function TodayTempFetch() {
-  const [weatherData, setWeatherData] = useState(null);
-
+  const [weatherData, setWeatherData] = useState([]);
   const fetchWeatherData = async (url) => {
     try {
       const res = await fetch(url);
@@ -40,9 +39,11 @@ function TodayTempFetch() {
   }, []);
   return (
     <>
+      {/* {obj.map((obj,i)=>(
+
+    ))} */}
       <pre>{JSON.stringify(weatherData)}</pre>;
     </>
   );
 }
-
 export default TodayTempFetch;
